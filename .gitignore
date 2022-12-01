@@ -1,0 +1,9 @@
+# Ignore emacs backup files.
+*~
+[#]*[#]
+
+# Ignore C++ object files.
+*.o
+
+# Ignore binaries.
+**/part[12]

@@ -2,6 +2,9 @@
 *~
 [#]*[#]
 
+# Ignore compilation databases.
+**/compile_commands.json
+
 # Ignore C++ object files.
 *.o
 

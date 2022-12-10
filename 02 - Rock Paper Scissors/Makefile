@@ -20,13 +20,13 @@ part2: part2.o
 clean:
 		$(RM) -f part1 part2 *.o
 
-debug: CXXFLAGS += -DDEBUG -g -Og
+debug: CXXFLAGS += -DDEBUG -g -O0 -no-pie
 debug: $(.DEFAULT_GOAL)
 
-part1-debug: CXXFLAGS += -DDEBUG -g -Og
+part1-debug: CXXFLAGS += -DDEBUG -g -O0 -no-pie
 part1-debug: part1
 
-part2-debug: CXXFLAGS += -DDEBUG -g -Og
+part2-debug: CXXFLAGS += -DDEBUG -g -O0 -no-pie
 part2-debug: part2
 
 all: part1 part2

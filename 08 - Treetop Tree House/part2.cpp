@@ -66,7 +66,7 @@ public:
                 || (y == (_height - 1)));
     }
 
-    Distance senicScore(const CoordinatePair & coordinates)
+    Distance scenicScore(const CoordinatePair & coordinates)
         const
     {
         auto tree = getTree(coordinates);
@@ -134,7 +134,7 @@ public:
 
         for (Distance y = 0; y < _height; ++y) {
             for (Distance x = 0; x < _width; ++x) {
-                auto score = senicScore({x, y});
+                auto score = scenicScore({x, y});
 
                 if (score > highest) {
                     highest = score;
@@ -146,7 +146,7 @@ public:
     }
 
 #ifdef DEBUG
-    void printSenicMap()
+    void printScenicMap()
     {
         std::ios::fmtflags oldFmtFlags = std::cout.flags();
 
@@ -155,7 +155,7 @@ public:
         for (Distance y = 0; y < _height; ++y) {
             for (Distance x = 0; x < _width; ++x) {
                 std::cout << "["
-                          << std::setfill('0') << std::setw(printWidth) << senicScore({x, y})
+                          << std::setfill('0') << std::setw(printWidth) << scenicScore({x, y})
                           << std::resetiosflags(oldFmtFlags)
                           << "]";
             }
@@ -172,7 +172,7 @@ int main()
     Forest forest(std::cin);
 
 #ifdef DEBUG
-    forest.printSenicMap();
+    forest.printScenicMap();
 #endif
 
     std::cout << forest.highestSenicScore() << std::endl;
